@@ -54,6 +54,9 @@ public class MovieDBRepository implements MovieRepository{
 		}
 		return "{\"message\": \"movie sucessfully deleted\"}";
 	}
+	
+	@Transactional(REQUIRED)
+	
 
 	private Movie findMovie(Long id) {
 		return manager.find(Movie.class, id);
