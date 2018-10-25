@@ -15,20 +15,22 @@ import javax.transaction.Transactional;
 import com.qa.persistence.domain.Movie;
 import com.qa.util.JSONUtil;
 
-
 // Class to add stuff to database
-
 
 @Transactional(SUPPORTS)
 @Default
-public class MovieDBRepository implements MovieRepository{
-	
+public class MovieDBRepository implements MovieRepository {
+
+//	public static void main(String[] st) {
+//		System.out.println(u);
+//	}
+
 	@PersistenceContext(unitName = "primary")
 	private EntityManager manager;
-	
+
 	@Inject
 	private JSONUtil util;
-	
+
 	@Override
 	public String getAllMovies() {
 		Query query = manager.createQuery("Select a FROM Movie a");
@@ -36,7 +38,7 @@ public class MovieDBRepository implements MovieRepository{
 		// Converting Object to JSON
 		return util.getJSONForObject(movies);
 	}
-	
+
 	@Override
 	@Transactional(REQUIRED)
 	public String addMovie(String movie) {
@@ -44,7 +46,7 @@ public class MovieDBRepository implements MovieRepository{
 		manager.persist(aMovie);
 		return "{\"message\": \"movie has been sucessfully added\"}";
 	}
-	
+
 	@Override
 	@Transactional(REQUIRED)
 	public String deleteMovie(Long id) {
@@ -55,20 +57,33 @@ public class MovieDBRepository implements MovieRepository{
 		return "{\"message\": \"movie sucessfully deleted\"}";
 	}
 	
-	@Transactional(REQUIRED)
-	
+//	public String updateMovie(Long id) {
+//		Movie movieInDB = findMovie(id);
+//		Movie aMovie = util.getObjectForJSON(movie, Movie.class);
+//		String query = manager.merge(getMovieById(id));
+//		
+//		return util.getJSONForObject(movieInDB);
+//		
+//	}
 
+	
+	public String getMovieById(Long id) {
+		Movie movieInDB = findMovie(id);
+		
+		return util.getJSONForObject(movieInDB);
+	}
+
+	@Transactional(REQUIRED)
 	private Movie findMovie(Long id) {
 		return manager.find(Movie.class, id);
 	}
-	
+
 	public void setManager(EntityManager manager) {
 		this.manager = manager;
 	}
-	
+
 	public void setUtil(JSONUtil util) {
 		this.util = util;
 	}
-
 
 }

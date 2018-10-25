@@ -7,6 +7,6 @@ public interface MovieService {
 	String addMovie(String movie);
 
 	String deleteMovie(Long id);
-
+	String getMovieById(Long id);
 
 }
