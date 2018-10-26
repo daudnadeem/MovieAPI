@@ -1,0 +1,45 @@
+<html>
+
+<head>
+
+
+
+    <script>
+        function getWebPage(URL) {
+            var myXML = new XMLHttpRequest();
+            myXML.open("GET", URL, false);
+            myXML.send();
+
+            document.getElementById("thisGuy").innerHTML = myXML.response;
+        }
+
+                function postWebPage(URL) {
+            var myXML = new XMLHttpRequest();
+            myXML.open("POST", URL, false);
+            myXML.send();
+
+            document.getElementById("thisGuy").innerHTML = myXML.response;
+        }
+
+        
+
+    </script>
+</head>
+
+<body>
+
+    <h1> Output</h1>
+    <p id="thisGuy"> Here is the actual output </p>
+    <button type="GetAllMovies" onclick="getWebPage('http://localhost:8080/Movie/api/movie/getAllMovies')">GetAllMovies</button>
+
+
+    <br/>
+    <br/>
+
+    <form>
+    <input type="text" id="movieID" class="st-search-input search-field" placeholder="Enter movie ID:"/>
+    <button type="button" onclick="getWebPage('http://localhost:8080/Movie/api/movie/getMovieById/')" + document.getElementById("movieID").value);>Find</button>
+</form>
+</body>
+
+</html>
