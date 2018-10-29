@@ -40,9 +40,7 @@
 
     <form>
     <input type="number" id="movieID" class="st-search-input search-field" placeholder="Enter movie ID:"/>
-    <button type="button" onclick="postWebPage('http://localhost:8180/Movie/api/movie/getMovieById/1')";>Find</button>
-
-    //+ document.getElementById('movieID').value
+    <button type="button" onclick="postWebPage('http://localhost:8180/Movie/api/movie/getMovieById/')" + movieID.value;>Find</button>
 
 </form>
 </body>
