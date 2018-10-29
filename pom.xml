@@ -136,7 +136,7 @@
 		<profile>
 			<id>deploy</id>
 			<build>
-				<directory>C:\Users\Admin\Applications\Wildfly\standalone\deployments</directory>
+				<directory>C:\Users\Admin\Applications\wildfly-10.1.0.Final\standalone\deployments</directory>
 			</build>
 		</profile>
 	</profiles>
