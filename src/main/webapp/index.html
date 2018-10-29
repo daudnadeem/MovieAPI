@@ -22,6 +22,24 @@
             document.getElementById("thisGuy").innerHTML = myXML.response;
         }
 
+            function deleteWebPage() {
+        var myXML = new XMLHttpRequest();
+        var URL = 'http://localhost:8180/Movie/api/movie/deleteMovieById/' + movieID.value;
+        myXML.open("DELETE", URL, false);
+        myXML.send();
+
+        document.getElementById("thisGuy").innerHTML = myXML.response;
+    }
+
+          function createWebPage() {
+      var myXML = new XMLHttpRequest();
+      var URL = 'http://localhost:8080/Movie/api/movie/addMovie';
+      myXML.open("POST", URL, false);
+      myXML.send();
+
+      document.getElementById("thisGuy").innerHTML = myXML.response;
+      }
+
 
 
     </script>
@@ -42,6 +60,7 @@
     <form>
     <input type="number" id="movieID" placeholder="Enter movie ID:"/>
     <button type="button" onclick="postWebPage()";>Find</button>
+    <button type="button" onclick="deleteWebPage()";>Delete</button>
 
 </form>
 </body>
