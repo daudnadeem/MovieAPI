@@ -28,8 +28,9 @@
         myXML.open("DELETE", URL, false);
         myXML.send();
 
-        document.getElementById("thisGuy").innerHTML = myXML.response;
+        document.getElementById("Row: " + movieID.value + "").outerHTML = "";
     }
+
 
           function createWebPage() {
       var myXML = new XMLHttpRequest();
@@ -39,6 +40,7 @@
 
       document.getElementById("thisGuy").innerHTML = myXML.response;
       }
+
 
 
 
