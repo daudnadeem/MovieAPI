@@ -13,9 +13,9 @@
             document.getElementById("thisGuy").innerHTML = myXML.response;
         }
 
-                function postWebPage(URL, var id) {
+                function postWebPage(URL) {
             var myXML = new XMLHttpRequest();
-            myXML.open("POST", URL, id, false);
+            myXML.open("POST", URL, false);
             myXML.send();
 
             document.getElementById("thisGuy").innerHTML = myXML.response;
@@ -40,8 +40,8 @@
 
     <form>
     <input type="text" id="movieID" class="st-search-input search-field" placeholder="Enter movie ID:"/>
-    <button type="button" onclick="postWebPage('http://localhost:8180/Movie/api/movie/getMovieById/')" , document.getElementById('movieID').value;>Find</button>
-    <p> Does this even work? </p>
+    <button type="button" onclick="postWebPage('http://localhost:8180/Movie/api/movie/getMovieById/')" + document.getElementById('movieID').value;>Find</button>
+
 </form>
 </body>
 
