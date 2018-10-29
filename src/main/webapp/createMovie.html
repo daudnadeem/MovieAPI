@@ -1,1 +1,28 @@
-<p>CongratuFUCKINGlations</p>
+<html>
+
+<head>
+      <script>
+
+    function createMovie(){
+
+      var title = document.getElementById("movieTitle").value;
+      var genre = document.getElementById("movieGenre").value;
+      var rating = document.getElementById("movieRating").value;
+      var x = new XMLHttpRequest();
+      var url = "http://localhost:8180/Movie/api/movie/addMovie";
+      x.open("POST", url, true);
+      x.send(JSON.stringify({title:title,genre:genre,rating:rating}));
+  }
+
+</script>
+</head>
+
+<<body>
+
+  <input type="text" id="movieTitle" placeholder="Enter Title:"/>
+  <input type="text" id="movieGenre" placeholder="Enter Genre:"/>
+  <input type="text" id="movieRating" placeholder="Enter Rating:"/>
+
+  <button type="button" onclick="createMovie()";>Add me NAOW</button>
+
+</body>
