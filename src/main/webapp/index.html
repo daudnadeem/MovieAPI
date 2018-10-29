@@ -24,7 +24,7 @@
 
             function deleteWebPage() {
         var myXML = new XMLHttpRequest();
-        var URL = 'http://localhost:8180/Movie/api/movie/deleteMovieById/' + movieID.value;
+        var URL = 'http://localhost:8180/Movie/api/movie/deleteMovie/' + movieID.value;
         myXML.open("DELETE", URL);
         myXML.send();
 
