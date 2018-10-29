@@ -30,15 +30,17 @@
 
     <h1> Output</h1>
     <p id="thisGuy"> Here is the actual output </p>
-    <button type="GetAllMovies" onclick="getWebPage('http://localhost:8080/Movie/api/movie/getAllMovies')">GetAllMovies</button>
+    <button type="GetAllMovies" onclick="getWebPage('http://localhost:8180/Movie/api/movie/getAllMovies')">GetAllMovies</button>
 
+	<button type="Reset" onclick="document.getElementById('thisGuy').innerHTML = 'Here is the actual output';">Reset</button>
+	
 
     <br/>
     <br/>
 
     <form>
     <input type="text" id="movieID" class="st-search-input search-field" placeholder="Enter movie ID:"/>
-    <button type="button" onclick="getWebPage('http://localhost:8080/Movie/api/movie/getMovieById/')" + document.getElementById("movieID").value);>Find</button>
+    <button type="button" onclick="postWebPage('http://localhost:8080/Movie/api/movie/getMovieById/')" + document.getElementById('movieID').innerHTML);>Find</button>
 </form>
 </body>
 
