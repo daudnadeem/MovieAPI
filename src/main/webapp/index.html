@@ -40,7 +40,7 @@
 
     <form>
     <input type="number" id="movieID" placeholder="Enter movie ID:"/>
-    <button type="button" onclick="postWebPage('http://localhost:8180/Movie/api/movie/getMovieById/')" + movieID.value;>Find</button>
+    <button type="button" onclick="postWebPage('http://localhost:8180/Movie/api/movie/getMovieById/')" + document.getElementById(movieID).value;>Find</button>
 
 </form>
 </body>
