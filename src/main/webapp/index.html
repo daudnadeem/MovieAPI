@@ -38,9 +38,11 @@
     <br/>
     <br/>
 
+3
+
     <form>
     <input type="text" id="movieID" class="st-search-input search-field" placeholder="Enter movie ID:"/>
-    <button type="button" onclick="postWebPage('http://localhost:8180/Movie/api/movie/getMovieById/')"  + document.getElementById('movieID').value;>Find</button>
+    <button type="button" onclick="postWebPage('http://localhost:8180/Movie/api/movie/getMovieById/+ document.getElementById('movieID').value')";>Find</button>
     <p> Does this even work? </p>
 </form>
 </body>
