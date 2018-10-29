@@ -13,8 +13,9 @@
             document.getElementById("thisGuy").innerHTML = myXML.response;
         }
 
-                function postWebPage(URL) {
+                function postWebPage() {
             var myXML = new XMLHttpRequest();
+            var URL = 'http://localhost:8180/Movie/api/movie/getMovieById/' + movieID.value;
             myXML.open("POST", URL, false);
             myXML.send();
 
@@ -40,7 +41,7 @@
 
     <form>
     <input type="number" id="movieID" placeholder="Enter movie ID:"/>
-    <button type="button" onclick="postWebPage('http://localhost:8180/Movie/api/movie/getMovieById/')" + document.getElementById(movieID).value;>Find</button>
+    <button type="button" onclick="postWebPage()";>Find</button>
 
 </form>
 </body>
